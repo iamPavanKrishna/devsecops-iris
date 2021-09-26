@@ -1,6 +1,9 @@
-# Dev-Sec-Ops Demo/Assignment
+# Dev-Sec-Ops Assignment
+---
+### Pavan krishna's Forked repository
 
-[![codecov](https://codecov.io/gh/PGCSEDS-IIITH/devsecops-iris/branch/master/graph/badge.svg?token=EILEH8L7R5)](https://codecov.io/gh/PGCSEDS-IIITH/devsecops-iris)
+
+[![codecov](https://codecov.io/gh/iamPavanKrishna/devsecops-iris/branch/master/graph/badge.svg?token=0KZ5ZTABV9)](https://codecov.io/gh/iamPavanKrishna/devsecops-iris)
 
 This repository contains code which demonstrates Dev-Sec-Ops using a `FastAPI` application which predicts the flower class using the IRIS dataset (https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)
 
