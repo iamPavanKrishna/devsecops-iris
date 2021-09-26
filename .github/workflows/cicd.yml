@@ -6,7 +6,10 @@ on: push
 jobs:
   # first job to test the application using pytest
   unittest:
-    runs-on: ubuntu-latest # choose the OS for running the action
+    strategy:
+      matrix: 
+        os: ['ubuntu-latest', 'windows-latest']
+    runs-on: ${{ matrix.os }} # choose the OS for running the action
     # define the individual sequential steps to be run
     steps:
       - name: Checkout the repository
@@ -23,11 +26,11 @@ jobs:
           pytest
 
   codecoverage:
-    runs-on: ubuntu-latest # choose the OS for running the action
     strategy:
       matrix: 
         python: ['3.7', '3.8', '3.9']
         os: ['ubuntu-latest', 'windows-latest']
+    runs-on: ${{ matrix.os }} # choose the OS for running the action
     env:
       PYTHON: ${{ matrix.python }}
     # define the individual sequential steps to be run
@@ -77,7 +80,11 @@ jobs:
           path: ./results.sarif
   
   upload_zip:
-    runs-on: ubuntu-latest # choose the OS for running the action.
+    strategy:
+      matrix: 
+        python: ['3.7', '3.8', '3.9']
+        os: ['ubuntu-latest', 'windows-latest']
+    runs-on: ${{ matrix.os }} # choose the OS for running the action
     needs: 
       - unittest
       - codecoverage
